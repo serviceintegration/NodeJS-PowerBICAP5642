@@ -8,7 +8,7 @@ module.exports = function (app) {
     //});
     
     app.get("/", function(req, res){
-    res.sendFile("/index2.html");
+    res.sendFile("./index2.html");
     });
 
     // chat area
