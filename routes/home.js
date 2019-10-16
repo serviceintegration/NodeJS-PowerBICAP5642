@@ -2,7 +2,7 @@ module.exports = function (app) {
 
     // home page
     app.get('/', function (req, res) {
-        res.render(__dirname + "/html/index.html", { title: 'Home Page.  ' })
+        res.render("/html/index.html", { title: 'Home Page.  ' })
     });
 
     // chat area
