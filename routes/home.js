@@ -4,7 +4,7 @@ module.exports = function (app) {
     app.get('/', function (req, res) {
         //res.render("/html/index.html", { title: 'Home Page.  ' })
         //res.write('Hello from Ruth\n')
-        res.sendFile("./src/index2.html");
+        res.send("./src/index2.html");
     });
 
     // chat area
