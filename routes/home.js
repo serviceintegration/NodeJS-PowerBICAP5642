@@ -3,7 +3,8 @@ module.exports = function (app) {
     // home page
     app.get('/', function (req, res) {
         //res.render("/html/index.html", { title: 'Home Page.  ' })
-        res.write('Hello from Ruth\n')
+        //res.write('Hello from Ruth\n')
+        res.send("teste");
     });
 
     // chat area
