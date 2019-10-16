@@ -1,34 +1,18 @@
-var http = require('http');
-var fs = require('fs');
-var url = require('url');
+module.exports = function (app) {
 
-var pathPage = function(page){
-      return __dirname + "/html/" + page + ".html";
-};
-
-var router = function(pathname){
-    if(pathname && pathname != "/"){
-        var exist = fileExists( pathPage(pathname) );
-        return exist ? pathPage(pathname) : pathPage("erro");
-    }
-    return pathPage("index");
-};
-
-var fileExists = function(filePath){
-    try{
-        return fs.statSync(filePath).isFile();
-    }catch (err){
-        return false;
-    }
-};
-
-var server = http.createServer(function (request, response) {
-    var page = router( url.parse(request.url).pathname );
-    fs.readFile(page, function(err, data){
-        response.end(data);
+    // home page
+    app.get('/', function (req, res) {
+        //res.render("/html/index.html", { title: 'Home Page.  ' })
+        res.write('Hello from Ruth\n')
     });
-});
 
-server.listen(3000, function () {
-    console.log('Servidor rodando na porta 3000');
-});
+    // chat area
+    app.get('/chat', function (req, res) {
+        res.render('chat', { title: 'Chat with Me!  ' })
+    });
+
+    // about page
+    app.get('/about', function (req, res) {
+        res.render('about', { title: 'About Me.  ' })
+    });
+}
