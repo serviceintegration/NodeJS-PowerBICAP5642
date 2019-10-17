@@ -1,20 +1,17 @@
 module.exports = function (app) {
-    const express = require('express'),
-        es6Renderer = require('express-es6-template-engine'),
-        app = express();
 
-    app.engine('html', es6Renderer);
-    app.set('views', 'views');
-    app.set('view engine', 'html');
-
+    // home page
     app.get('/', function (req, res) {
-        res.render('index', {
-            locals: {
-                title: 'Welcome!'
-            }
-        });
+        res.render('index', { title: 'Home Page.  ' })
     });
 
-    app.listen(3000);
+    // chat area
+    app.get('/chat', function (req, res) {
+        res.render('chat', { title: 'Chat with Me!  ' })
+    });
 
+    // about page
+    app.get('/about', function (req, res) {
+        res.render('about', { title: 'About Me.  ' })
+    });
 }
