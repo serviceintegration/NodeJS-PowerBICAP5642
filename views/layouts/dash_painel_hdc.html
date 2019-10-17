@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>AdminX - The last Admin template you'll ever need</title>
+<html lang="pt">
+
+<head>
+    <title>TIM HDC - Power BI</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" type="text/css" href="./dist/css/adminx.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="../dist/css/adminx.css" media="screen" />
+    
+    <!-- this is only relevant for the demo -->
+    <link rel="stylesheet" href="../demo/demo.css">
 
-    <!--
-      # Optional Resources
-      Feel free to delete these if you don't need them in your project
-    -->
+
 
 </head>
 
 <body>
     <div class="adminx-container">
         <nav class="navbar navbar-expand justify-content-between fixed-top">
-            <a class="navbar-brand mb-0 h1 d-none d-md-block" href="index.html" style="font-weight: bold;">
-                <img src="./demo/img/logo.png" class="navbar-brand-image d-inline-block align-top mr-2" alt="">
-                TIM - HDC - teste
+            <a class="navbar-brand mb-0 h1 d-none d-md-block" href="../index.html" style="font-weight: bold;">
+                <img src="../demo/img/logo.png" class="navbar-brand-image d-inline-block align-top mr-2" alt="">
+                TIM - HDC
             </a>
 
 
@@ -28,7 +29,7 @@
                     <div class="input-group-prepend">
                     </div>
                     <span class="navbar-brand mb-0 h1 d-none d-md-block" style="font-weight: bold;">
-                        INÍCIO
+                        DASHBOARD - PAINEL HDC
                     </span>
                 </div>
             </form>
@@ -45,7 +46,7 @@
 
                 <li class="nav-item dropdown">
                     <a class="nav-link avatar-with-name" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#">
-                        <img src="./demo/img/logout.png" class="d-inline-block align-top" alt="">
+                        <img src="./demo/img/logo.png" class="d-inline-block align-top" alt="">
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item text-danger" href="https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F">Sign out</a>
@@ -62,7 +63,7 @@
 
                 <!-- Início -->
                 <li class="sidebar-nav-item">
-                    <a href="index.html" class="sidebar-nav-link active">
+                    <a href="../index.html" class="sidebar-nav-link active">
                         <span class="sidebar-nav-icon">
                             <i data-feather="home"></i>
                         </span>
@@ -79,7 +80,8 @@
 
                 <!-- Daily - Com expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" data-toggle="collapse" href="#example" aria-expanded="false" aria-controls="example">
+                    <a class="sidebar-nav-link collapsed" data-toggle="collapse" 
+                       href="#example" aria-expanded="false" aria-controls="example">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -93,7 +95,7 @@
 
                     <ul class="sidebar-sub-nav collapse" id="example">
                         <li class="sidebar-nav-item">
-                            <a href="./layouts/dash_daily_p1.html" class="sidebar-nav-link">
+                            <a href="dash_daily_p1.html" class="sidebar-nav-link">
                                 <span class="sidebar-nav-abbr">
                                     01
                                 </span>
@@ -104,7 +106,7 @@
                         </li>
 
                         <li class="sidebar-nav-item">
-                            <a href="./layouts/dash_daily_p2.html" class="sidebar-nav-link">
+                            <a href="dash_daily_p2.html" class="sidebar-nav-link">
                                 <span class="sidebar-nav-abbr">
                                     02
                                 </span>
@@ -115,7 +117,7 @@
                         </li>
 
                         <li class="sidebar-nav-item">
-                            <a href="./layouts/dash_daily_p3.html" class="sidebar-nav-link">
+                            <a href="dash_daily_p3.html" class="sidebar-nav-link">
                                 <span class="sidebar-nav-abbr">
                                     03
                                 </span>
@@ -132,7 +134,7 @@
 
                 <!-- XTTS - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_XTTS.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_XTTS.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -147,7 +149,7 @@
 
                 <!-- Martim - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_Martim.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_Martim.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -163,7 +165,7 @@
 
                 <!-- Painel HDC - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_Painel_HDC.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_Painel_HDC.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -179,7 +181,7 @@
 
                 <!-- Resumo Operacional - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_resumo_operacional.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_resumo_operacional.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -195,7 +197,7 @@
 
                 <!-- Nova visão - Ofensores - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_nova_visao_ofensores.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_nova_visao_ofensores.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -211,7 +213,7 @@
 
                 <!-- Ofensores - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_ofensores.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_ofensores.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -227,7 +229,7 @@
 
                 <!-- Deslocamento - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_deslocamento.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_deslocamento.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -243,7 +245,7 @@
 
                 <!-- Telefonia - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_telefonia.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_telefonia.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -259,7 +261,7 @@
 
                 <!-- Pesquisa de Satisfação - SEM expansão -->
                 <li class="sidebar-nav-item">
-                    <a class="sidebar-nav-link collapsed" href="./layouts/dash_pesquisa.html">
+                    <a class="sidebar-nav-link collapsed" href="dash_pesquisa.html">
                         <span class="sidebar-nav-icon">
                             <i data-feather="bar-chart"></i>
                         </span>
@@ -288,7 +290,7 @@
 
                     <ul class="sidebar-sub-nav collapse" id="navForms">
                         <li class="sidebar-nav-item">
-                            <a href="./layouts/IMOC.html" class="sidebar-nav-link">
+                            <a href="IMOC.html" class="sidebar-nav-link">
                                 <span class="sidebar-nav-abbr">
                                     Te
                                 </span>
@@ -299,7 +301,7 @@
                         </li>
 
                         <li class="sidebar-nav-item">
-                            <a href="./layouts/IMOC.html" class="sidebar-nav-link">
+                            <a href="IMOC.html" class="sidebar-nav-link">
                                 <span class="sidebar-nav-abbr">
                                     Dev
                                 </span>
@@ -317,96 +319,26 @@
 
         <!-- adminx-content-aside -->
         <div class="adminx-content">
+            <!-- <div class="adminx-aside">
+
+        </div> -->
+
             <div class="adminx-main-content">
                 <div class="container-fluid">
-                    <!-- BreadCrumb -->
 
-                    <div class="pb-3">
-                        <h1>Dashboard</h1>
-                    </div>
 
                     <div class="row">
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="card mb-grid w-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="card-title mb-0">
-                                            Teste
-                                        </h5>
 
-                                        <div class="card-title-sub">
-                                            75%
-                                        </div>
-                                    </div>
+                        <div class="embed-responsive embed-responsive-16by9">
 
-                                    <div class="progress mt-auto">
-                                        <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">3/4</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="card mb-grid w-100">
-                                <div class="card-body d-flex flex-column">
-                                    <div class="d-flex justify-content-between mb-3">
-                                        <h5 class="card-title mb-0">
-                                            Open Tasks
-                                        </h5>
+                            <iframe style="position:absolute;" src="https://app.powerbi.com/reportEmbed?reportId=f01942a3-c68b-44fb-81d6-ba78c4ae99bf&autoAuth=true&ctid=5f006dac-15f2-4cb9-963f-ae4e6c14859c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQifQ%3D%3D">
+                            </iframe>
 
-                                        <div class="card-title-sub">
-                                            18/30
-                                        </div>
-                                    </div>
-
-                                    <div class="progress mt-auto">
-                                        <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="card border-0 bg-primary text-white text-center mb-grid w-100">
-                                <div class="d-flex flex-row align-items-center h-100">
-                                    <div class="card-icon d-flex align-items-center h-100 justify-content-center">
-                                        <i data-feather="bar-chart"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-info-title">Queries</div>
-                                        <h3 class="card-title mb-0">
-                                            8
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3 d-flex">
-                            <div class="card border-0 bg-success text-white text-center mb-grid w-100">
-                                <div class="d-flex flex-row align-items-center h-100">
-                                    <div class="card-icon d-flex align-items-center h-100 justify-content-center">
-                                        <i data-feather="users"></i>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="card-info-title">Sign Ups</div>
-                                        <h3 class="card-title mb-0">
-                                            12
-                                        </h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-
-                        </div>
-                        <div class="col-lg-4">
 
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -416,13 +348,20 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
-    <script src="./dist/js/vendor.js"></script>
-    <script src="./dist/js/adminx.js"></script>
+    <script src="../dist/js/vendor.js"></script>
+    <script src="../dist/js/adminx.js"></script>
+    <script src="/bower_components/powerbi-client/dist/powerbi.js"></script>
 
     <!-- If you prefer vanilla JS these are the only required scripts -->
-    <!-- script src="./dist/js/vendor.js"></script>
-    <script src="./dist/js/adminx.vanilla.js"></script-->
+    <!-- script src="./dist/js/vendor.js"></script> -->
+    <script src="../dist/js/adminx.vanilla.js"></script>
 
-</body>
 
-</html>
+
+
+
+
+
+
+
+</body></html>
