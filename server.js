@@ -1,33 +1,34 @@
-
 /**
-* MODULE DEPENDENCIES
-* -------------------------------------------------------------------------------------------------
-* include any modules you will use through out the file
-**/
+ * MODULE DEPENDENCIES
+ * -------------------------------------------------------------------------------------------------
+ * include any modules you will use through out the file
+ **/
 
-var express = require('express')
-  , http = require('http')
-  , nconf = require('nconf')
-  , path = require('path')
-  , everyauth = require('everyauth')
-  , Recaptcha = require('recaptcha').Recaptcha;
-
-
-/**
-* CONFIGURATION
-* -------------------------------------------------------------------------------------------------
-* load configuration settings from ENV, then settings.json.  Contains keys for OAuth logins. See 
-* settings.example.json.  
-**/
-nconf.env().file({ file: 'settings.json' });
-
+var express = require('express'),
+    http = require('http'),
+    nconf = require('nconf'),
+    path = require('path'),
+    everyauth = require('everyauth'),
+    Recaptcha = require('recaptcha').Recaptcha;
 
 
 /**
-* EVERYAUTH AUTHENTICATION
-* -------------------------------------------------------------------------------------------------
-* allows users to log in and register using OAuth services
-**/
+ * CONFIGURATION
+ * -------------------------------------------------------------------------------------------------
+ * load configuration settings from ENV, then settings.json.  Contains keys for OAuth logins. See 
+ * settings.example.json.  
+ **/
+nconf.env().file({
+    file: 'settings.json'
+});
+
+
+
+/**
+ * EVERYAUTH AUTHENTICATION
+ * -------------------------------------------------------------------------------------------------
+ * allows users to log in and register using OAuth services
+ **/
 
 everyauth.debug = true;
 
@@ -37,23 +38,26 @@ var usersById = {},
     usersByFacebookId = {},
     usersByTwitId = {},
     usersByLogin = {
-        'user@example.com': addUser({ email: 'user@example.com', password: 'azure' })
+        'user@example.com': addUser({
+            email: 'user@example.com',
+            password: 'azure'
+        })
     };
 
 everyauth.
-    everymodule.
-    findUserById(function (id, callback) {
-        callback(null, usersById[id]);
-    });
+everymodule.
+findUserById(function (id, callback) {
+    callback(null, usersById[id]);
+});
 
 
 /**
-* FACEBOOK AUTHENTICATION
-* -------------------------------------------------------------------------------------------------
-* uncomment this section if you want to enable facebook authentication.  To use this, you will need
-* to get a facebook application Id and Secret, and add those to settings.json.  See:
-* http://developers.facebook.com/
-**/
+ * FACEBOOK AUTHENTICATION
+ * -------------------------------------------------------------------------------------------------
+ * uncomment this section if you want to enable facebook authentication.  To use this, you will need
+ * to get a facebook application Id and Secret, and add those to settings.json.  See:
+ * http://developers.facebook.com/
+ **/
 
 //everyauth.
 //    facebook.
@@ -69,12 +73,12 @@ everyauth.
 
 
 /**
-* TWITTER AUTHENTICATION
-* -------------------------------------------------------------------------------------------------
-* uncomment this section if you want to enable twitter authentication.  To use this, you will need
-* to get a twitter key and secret, and add those to settings.json.  See:
-* https://dev.twitter.com/
-**/
+ * TWITTER AUTHENTICATION
+ * -------------------------------------------------------------------------------------------------
+ * uncomment this section if you want to enable twitter authentication.  To use this, you will need
+ * to get a twitter key and secret, and add those to settings.json.  See:
+ * https://dev.twitter.com/
+ **/
 
 //everyauth
 //  .twitter
@@ -88,13 +92,13 @@ everyauth.
 
 
 /**
-* USERNAME & PASSWORD AUTHENTICATION
-* -------------------------------------------------------------------------------------------------
-* this section provides basic in-memory username and password authentication
-**/
+ * USERNAME & PASSWORD AUTHENTICATION
+ * -------------------------------------------------------------------------------------------------
+ * this section provides basic in-memory username and password authentication
+ **/
 
 everyauth
-  .password
+    .password
     .loginWith('email')
     .getLoginPath('/login')
     .postLoginPath('/login')
@@ -169,19 +173,27 @@ function addUser(source, sourceUser) {
         user.id = ++nextUserId;
         return usersById[nextUserId] = user;
     } else { // non-password-based
-        user = usersById[++nextUserId] = { id: nextUserId };
+        user = usersById[++nextUserId] = {
+            id: nextUserId
+        };
         user[source] = sourceUser;
     }
     return user;
 }
 
 
+var cons = require('consolidate');
+
+// view engine setup
+    app.engine('html', cons.swig);
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'html');
 
 var app = express();
 app.configure(function () {
     app.set('port', process.env.PORT || 3000);
     app.set('views', __dirname + '/views');
-    app.set('view engine', 'html');
+    app.set('view engine', 'jade');
     app.use(express.favicon());
     app.use(express.logger('dev'));
     app.use(express.bodyParser());
@@ -190,7 +202,9 @@ app.configure(function () {
     app.use(express.session());
     app.use(everyauth.middleware(app));
     app.use(app.router);
-    app.use(require('less-middleware')({ src: __dirname + '/public' }));
+    app.use(require('less-middleware')({
+        src: __dirname + '/public'
+    }));
     app.use(express.static(path.join(__dirname, 'public')));
 });
 
@@ -198,11 +212,13 @@ app.configure('development', function () {
     app.use(express.errorHandler());
 });
 
+
+
 /**
-* ROUTING
-* -------------------------------------------------------------------------------------------------
-* include a route file for each major area of functionality in the site
-**/
+ * ROUTING
+ * -------------------------------------------------------------------------------------------------
+ * include a route file for each major area of functionality in the site
+ **/
 require('./routes/home')(app);
 require('./routes/account')(app);
 
@@ -210,10 +226,10 @@ require('./routes/account')(app);
 var server = http.createServer(app);
 
 /**
-* CHAT / SOCKET.IO 
-* -------------------------------------------------------------------------------------------------
-* this shows a basic example of using socket.io to orchestrate chat
-**/
+ * CHAT / SOCKET.IO 
+ * -------------------------------------------------------------------------------------------------
+ * this shows a basic example of using socket.io to orchestrate chat
+ **/
 
 // socket.io configuration
 var buffer = [];
@@ -226,15 +242,21 @@ io.configure(function () {
 });
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('messages', { buffer: buffer });
+    socket.emit('messages', {
+        buffer: buffer
+    });
     socket.on('setname', function (name) {
         socket.set('name', name, function () {
-            socket.broadcast.emit('announcement', { announcement: name + ' connected' });
+            socket.broadcast.emit('announcement', {
+                announcement: name + ' connected'
+            });
         });
     });
     socket.on('message', function (message) {
         socket.get('name', function (err, name) {
-            var msg = { message: [name, message] };
+            var msg = {
+                message: [name, message]
+            };
             buffer.push(msg);
             if (buffer.length > 15) buffer.shift();
             socket.broadcast.emit('message', msg);
@@ -242,17 +264,19 @@ io.sockets.on('connection', function (socket) {
     });
     socket.on('disconnect', function () {
         socket.get('name', function (err, name) {
-            socket.broadcast.emit('announcement', { announcement: name + ' disconnected' });
+            socket.broadcast.emit('announcement', {
+                announcement: name + ' disconnected'
+            });
         })
     })
 });
 
 
 /**
-* RUN
-* -------------------------------------------------------------------------------------------------
-* this starts up the server on the given port
-**/
+ * RUN
+ * -------------------------------------------------------------------------------------------------
+ * this starts up the server on the given port
+ **/
 
 server.listen(app.get('port'), function () {
     console.log("Express server listening on port " + app.get('port'));
