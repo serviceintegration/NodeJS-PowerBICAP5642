@@ -3,7 +3,7 @@ module.exports = function (app) {
     // home page
     app.get('/', function (req, res) {
         //res.sendFile('./index.html', { title: 'Home Page.  ' })
-        res.send("teste",{ title: 'Home Page.  ' })
+        res.send("teste",{ title: 'Home Page.  ' });
     });
 
     // chat area
