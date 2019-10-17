@@ -2,8 +2,7 @@ module.exports = function (app) {
 
     // home page
     app.get('/', function (req, res) {
-        //res.sendFile('./index.html', { title: 'Home Page.  ' })
-        res.send("teste");
+        res.render('index.html', { title: 'Home Page.  ' })
     });
 
     // chat area
