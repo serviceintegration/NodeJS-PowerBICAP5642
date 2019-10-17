@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <title>TIM HDC - Power BI</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" type="text/css" href="../dist/css/adminx.css" media="screen" />
+    
+    <!-- this is only relevant for the demo -->
+    <link rel="stylesheet" href="../demo/demo.css">
+
+
+
+</head>
+
+<body>
+    <div class="adminx-container">
+        <nav class="navbar navbar-expand justify-content-between fixed-top">
+            <a class="navbar-brand mb-0 h1 d-none d-md-block" href="../index.html" style="font-weight: bold;">
+                <img src="../demo/img/logo.png" class="navbar-brand-image d-inline-block align-top mr-2" alt="">
+                TIM - HDC
+            </a>
+
+
+            <form class="form-inline form-quicksearch d-none d-md-block mx-auto">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                    </div>
+                    <span class="navbar-brand mb-0 h1 d-none d-md-block" style="font-weight: bold;">
+                        DASHBOARD - DAILY - Parte 3
+                    </span>
+                </div>
+            </form>
+
+
+            <!--<div class="d-flex flex-1 d-block d-md-none">
+                <a href="#" class="sidebar-toggle ml-3">
+                    <i data-feather="menu"></i>
+                </a>
+            </div>-->
+
+            <ul class="navbar-nav d-flex justify-content-end mr-2">
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link avatar-with-name" id="navbarDropdownMenuLink" data-toggle="dropdown" href="#">
+                        <img src="./demo/img/logo.png" class="d-inline-block align-top" alt="">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item text-danger" href="https://login.microsoftonline.com/common/oauth2/logout?post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F">Sign out</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- expand-hover push -->
+        <!-- Sidebar -->
+        <div class="adminx-sidebar expand-hover push">
+            <ul class="sidebar-nav">
+
+
+                <!-- Início -->
+                <li class="sidebar-nav-item">
+                    <a href="../index.html" class="sidebar-nav-link active">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="home"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Início
+                        </span>
+                        <span class="sidebar-nav-end">
+
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Daily - Com expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" data-toggle="collapse" 
+                       href="#example" aria-expanded="false" aria-controls="example">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Daily
+                        </span>
+                        <span class="sidebar-nav-end">
+                            <i data-feather="chevron-right" class="nav-collapse-icon"></i>
+                        </span>
+                    </a>
+
+                    <ul class="sidebar-sub-nav collapse" id="example">
+                        <li class="sidebar-nav-item">
+                            <a href="dash_daily_p1.html" class="sidebar-nav-link">
+                                <span class="sidebar-nav-abbr">
+                                    01
+                                </span>
+                                <span class="sidebar-nav-name">
+                                    Parte 01
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-item">
+                            <a href="dash_daily_p2.html" class="sidebar-nav-link">
+                                <span class="sidebar-nav-abbr">
+                                    02
+                                </span>
+                                <span class="sidebar-nav-name">
+                                    Parte 02
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-item">
+                            <a href="dash_daily_p3.html" class="sidebar-nav-link">
+                                <span class="sidebar-nav-abbr">
+                                    03
+                                </span>
+                                <span class="sidebar-nav-name">
+                                    Parte 03
+                                </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- XTTS - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_XTTS.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            XTTS
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+                <!-- Martim - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_Martim.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Martim
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Painel HDC - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_Painel_HDC.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Painel HDC
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Resumo Operacional - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_resumo_operacional.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Resumo Operacional
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Nova visão - Ofensores - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_nova_visao_ofensores.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Nova visão - Ofensores
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Ofensores - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_ofensores.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Ofensores
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Deslocamento - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_deslocamento.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Deslocamento
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Telefonia - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_telefonia.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Telefonia
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- Pesquisa de Satisfação - SEM expansão -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" href="dash_pesquisa.html">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="bar-chart"></i>
+                        </span>
+                        <span class="sidebar-nav-name">
+                            Pesquisa de Satisfação
+                        </span>
+                        <span class="sidebar-nav-end">
+                        </span>
+                    </a>
+                </li>
+                <!-- ###### FINAL ###### -->
+
+
+                <!-- IMOC -->
+                <li class="sidebar-nav-item">
+                    <a class="sidebar-nav-link collapsed" data-toggle="collapse" href="#navForms" aria-expanded="false" aria-controls="navForms">
+                        <span class="sidebar-nav-icon">
+                            <i data-feather="settings"></i></span>
+                        <span class="sidebar-nav-name">
+                            IMOC
+                        </span>
+                        <span class="sidebar-nav-end">
+                            <i data-feather="chevron-right" class="nav-collapse-icon"></i>
+                        </span>
+                    </a>
+
+                    <ul class="sidebar-sub-nav collapse" id="navForms">
+                        <li class="sidebar-nav-item">
+                            <a href="IMOC.html" class="sidebar-nav-link">
+                                <span class="sidebar-nav-abbr">
+                                    Te
+                                </span>
+                                <span class="sidebar-nav-name">
+                                    Testes
+                                </span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-nav-item">
+                            <a href="IMOC.html" class="sidebar-nav-link">
+                                <span class="sidebar-nav-abbr">
+                                    Dev
+                                </span>
+                                <span class="sidebar-nav-name">
+                                    Desenvolvimento
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div><!-- Sidebar End -->
+
+        <!-- adminx-content-aside -->
+        <div class="adminx-content">
+            <!-- <div class="adminx-aside">
+
+        </div> -->
+
+            <div class="adminx-main-content">
+                <div class="container-fluid">
+
+
+                    <div class="row">
+
+                        <div class="embed-responsive embed-responsive-16by9">
+
+
+                            <iframe style="position:absolute;" src="https://app.powerbi.com/reportEmbed?reportId=fadc4e88-46b2-4a9b-b864-466cdc413fa7&autoAuth=true&ctid=5f006dac-15f2-4cb9-963f-ae4e6c14859c&config=eyJjbHVzdGVyVXJsIjoiaHR0cHM6Ly93YWJpLWJyYXppbC1zb3V0aC1iLXByaW1hcnktcmVkaXJlY3QuYW5hbHlzaXMud2luZG93cy5uZXQifQ%3D%3D">
+                            </iframe>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- If you prefer jQuery these are the required scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+    <script src="../dist/js/vendor.js"></script>
+    <script src="../dist/js/adminx.js"></script>
+    <script src="/bower_components/powerbi-client/dist/powerbi.js"></script>
+
+    <!-- If you prefer vanilla JS these are the only required scripts -->
+    <!-- script src="./dist/js/vendor.js"></script> -->
+    <script src="../dist/js/adminx.vanilla.js"></script>
+
+
+
+
+
+
+
+
+
+</body></html>
