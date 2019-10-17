@@ -1,17 +1,17 @@
-var http = require('http');
-var res = require('res');
+module.exports = function (app) {
 
-function onRequest(request, response) {
-    response.writeHead(200, {'Content-Type': 'text/html'});
-    res.readFile('index2.html', null, function(error, data) {
-        if (error) {
-            response.writeHead(404);
-            response.write('File not found!');
-        } else {
-            response.write(data);
-        }
-        response.end();
+    // home page
+    app.get('/', function (req, res) {
+        res.render('../index.html', { title: 'Home Page.  ' })
+    });
+
+    // chat area
+    app.get('/chat', function (req, res) {
+        res.render('chat', { title: 'Chat with Me!  ' })
+    });
+
+    // about page
+    app.get('/about', function (req, res) {
+        res.render('about', { title: 'About Me.  ' })
     });
 }
-
-http.createServer(onRequest).listen(8000);
