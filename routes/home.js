@@ -4,6 +4,18 @@ module.exports = function (app) {
         res.render('../index.html');
     });
 
+    app.get('/script', (req, res) => {
+        res.sendFile("./dist/js/vendor.js");
+    });
+
+    app.get('/script', (req, res) => {
+        res.sendFile("./dist/js/adminx.js");
+    });
+
+    app.get('/css', (req, res) => {
+        res.sendFile("./dist/css/adminx.css");
+    });
+
 
     // home page
     //app.get('/', function (req, res) {

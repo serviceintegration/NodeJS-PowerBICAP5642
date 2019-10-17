@@ -204,6 +204,10 @@ app.configure(function () {
     app.set('views', __dirname + '/views');
     app.engine('html', require('ejs').renderFile);
 
+    app.listen(8000, function () {
+        console.log('app listening on port 8000!');
+    });
+
 });
 
 app.configure('development', function () {
