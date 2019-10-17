@@ -1,17 +1,5 @@
-module.exports = function (app) {
-
-    // home page
-    app.get('/', function (req, res) {
-        res.render('index', { title: 'Chat with Me!  ' })
-    });
-
-    // chat area
-    app.get('/chat', function (req, res) {
-        res.render('chat', { title: 'Chat with Me!  ' })
-    });
-
-    // about page
-    app.get('/about', function (req, res) {
-        res.render('about', { title: 'About Me.  ' })
-    });
-}
+router.get('/', (req, res) => {
+   res.sendFile('index.html', {
+     root: './views'
+   });
+});
